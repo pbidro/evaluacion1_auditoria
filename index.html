@@ -8,75 +8,105 @@
 </head>
 <body>
     <div id="desktop">
-        <div class="icon" data-window="dbWindow">
-            <span>Base de Datos</span>
-        </div>
-        <div class="icon" data-window="infraWindow">
-            <span>Mapa de Infraestructura</span>
-        </div>
-        <div class="icon" data-window="procWindow">
-            <span>Administrador de Procesos</span>
-        </div>
-        <div class="icon" data-window="licenseWindow">
-            <span>Licencia Texto</span>
-        </div>
-        <div class="icon" data-window="contaWindow">
-            <span>Contabilidad Mágica</span>
-        </div>
-        <div class="icon" data-window="mailWindow">
-            <span>Hedwig Mail</span>
-        </div>
+        <div class="icon" data-window="dbWindow"><span>Base de Datos</span></div>
+        <div class="icon" data-window="infraWindow"><span>Mapa de Infraestructura</span></div>
+        <div class="icon" data-window="procWindow"><span>Administrador de Procesos</span></div>
+        <div class="icon" data-window="textWindow"><span>Motor de Texto</span></div>
+        <div class="icon" data-window="contaWindow"><span>Contabilidad</span></div>
+        <div class="icon" data-window="mailWindow"><span>Hedwig Mail</span></div>
     </div>
 
     <div id="dbWindow" class="window">
-        <div class="title-bar">Base de Datos de Alumnos<button class="close">X</button></div>
-        <pre id="dbData">{
-    "alumnos": [
-        {"nombre": "Harry Potter", "rut": "12345678-9", "direccion": "4 Privet Drive"},
-        {"nombre": "Hermione Granger", "rut": "98765432-1", "direccion": "Heathgate"}
-    ]
-}</pre>
+        <div class="title-bar"><span>Base de Datos</span>
+            <div class="window-buttons">
+                <button class="minimize">_</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <input type="text" id="dbSearch" placeholder="Buscar...">
+            <table id="dbTable"></table>
+            <p class="notice">Este es un entorno de pruebas. Algunos datos pueden no ser reales.</p>
+        </div>
     </div>
 
     <div id="infraWindow" class="window">
-        <div class="title-bar">Mapa de Infraestructura<button class="close">X</button></div>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAgMCAfDwRqsAAAAASUVORK5CYII=" alt="Mapa de servidores" class="content-img">
-        <p>Nota: uno de los servidores está ubicado en el baño.</p>
+        <div class="title-bar"><span>Mapa de Infraestructura</span>
+            <div class="window-buttons">
+                <button class="minimize">_</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <img id="infraImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAgMCAfDwRqsAAAAASUVORK5CYII=" alt="Mapa">
+            <p class="notice">Servidor ubicado erróneamente en el baño.</p>
+        </div>
     </div>
 
     <div id="procWindow" class="window">
-        <div class="title-bar">Administrador de Procesos<button class="close">X</button></div>
-        <ul>
-            <li>proceso.exe - Error</li>
-            <li>proceso.exe - Error (duplicado)</li>
-            <li>lognmanager - ???</li>
-        </ul>
+        <div class="title-bar"><span>Administrador de Procesos</span>
+            <div class="window-buttons">
+                <button class="minimize">_</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <table id="procTable"></table>
+        </div>
     </div>
 
-    <div id="licenseWindow" class="window">
-        <div class="title-bar">Licencia del Motor de Texto<button class="close">X</button></div>
-        <p>La licencia gratuita ha expirado. El software continúa en uso sin renovación.</p>
+    <div id="textWindow" class="window">
+        <div class="title-bar"><span>Motor de Texto</span>
+            <div class="window-buttons">
+                <button class="minimize">_</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="toolbar">
+                <button id="newDoc">Nuevo</button>
+                <button id="openDoc">Abrir</button>
+                <button id="saveDoc">Guardar</button>
+            </div>
+            <textarea id="editor" rows="10"></textarea>
+            <p class="notice">Licencia gratuita expirada. Sistema disponible solo en modo prueba.</p>
+        </div>
     </div>
 
     <div id="contaWindow" class="window">
-        <div class="title-bar">Contabilidad Mágica<button class="close">X</button></div>
-        <canvas id="chart1" width="200" height="150"></canvas>
-        <canvas id="chart2" width="200" height="150"></canvas>
+        <div class="title-bar"><span>Contabilidad</span>
+            <div class="window-buttons">
+                <button class="minimize">_</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <canvas id="chart1" width="200" height="150"></canvas>
+            <canvas id="chart2" width="200" height="150"></canvas>
+        </div>
     </div>
 
     <div id="mailWindow" class="window">
-        <div class="title-bar">Hedwig Mail<button class="close">X</button></div>
-        <ul>
-            <li>Correo 1: "Adjunto contrato sin cifrar..."</li>
-            <li>Correo 2: "Prácticas cuestionables..."</li>
-        </ul>
+        <div class="title-bar"><span>Hedwig Mail</span>
+            <div class="window-buttons">
+                <button class="minimize">_</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="window-content mail">
+            <ul id="mailList"></ul>
+            <div id="mailView"></div>
+            <p class="notice">Este es un sistema de prueba, algunos datos pueden no ser reales.</p>
+        </div>
     </div>
 
     <div id="taskbar">
+        <button id="startBtn">Inicio</button>
+        <div id="taskItems"></div>
         <span id="clock"></span>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
