@@ -25,6 +25,10 @@ function openWindow(id){
 function initIcons(){
     document.querySelectorAll('.icon').forEach(icon=>{
         icon.addEventListener('dblclick', ()=>openWindow(icon.dataset.window));
+        icon.addEventListener('click', ()=>{
+            document.querySelectorAll('.icon').forEach(i=>i.classList.remove('selected'));
+            icon.classList.add('selected');
+        });
     });
 }
 
@@ -47,6 +51,26 @@ function initControls(){
     });
 }
 
+function initStartMenu(){
+    const btn = document.getElementById('startBtn');
+    const menu = document.getElementById('startMenu');
+    btn.addEventListener('click', e=>{
+        e.stopPropagation();
+        menu.style.display = menu.style.display==='block' ? 'none':'block';
+    });
+    document.addEventListener('click', e=>{
+        if(e.target!==btn && !menu.contains(e.target)){
+            menu.style.display='none';
+        }
+    });
+    menu.querySelectorAll('li').forEach(li=>{
+        li.addEventListener('click', ()=>{
+            openWindow(li.dataset.window);
+            menu.style.display='none';
+        });
+    });
+}
+
 function dragWindows(){
     document.querySelectorAll('.window').forEach(win=>{
         const bar = win.querySelector('.title-bar');
@@ -66,6 +90,26 @@ function dragWindows(){
     });
 }
 
+function dragIcons(){
+    document.querySelectorAll('.icon').forEach(icon=>{
+        let offsetX, offsetY, dragging=false;
+        icon.addEventListener('mousedown', e=>{
+            dragging=true;
+            offsetX = e.clientX - icon.offsetLeft;
+            offsetY = e.clientY - icon.offsetTop;
+            icon.classList.add('selected');
+        });
+        document.addEventListener('mousemove', e=>{
+            if(dragging){
+                icon.style.position='absolute';
+                icon.style.left=(e.clientX-offsetX)+'px';
+                icon.style.top=(e.clientY-offsetY)+'px';
+            }
+        });
+        document.addEventListener('mouseup', ()=>dragging=false);
+    });
+}
+
 function updateClock(){
     const now = new Date();
     document.getElementById('clock').textContent = now.toLocaleTimeString();
@@ -76,6 +120,44 @@ function drawCharts(){
     const ctx2 = document.getElementById('chart2').getContext('2d');
     new Chart(ctx1,{type:'bar',data:{labels:['Ene','Feb'],datasets:[{label:'Sistema oficial',data:[100,200],backgroundColor:'blue'}]},options:{responsive:false}});
     new Chart(ctx2,{type:'bar',data:{labels:['Ene','Feb'],datasets:[{label:'Software interno',data:[80,250],backgroundColor:'green'}]},options:{responsive:false}});
+}
+
+function loadMonitor(){
+    const systems=[
+        {n:'Servidor Web',s:'ok'},
+        {n:'Base de Datos',s:'ok'},
+        {n:'Correo',s:'fail'},
+        {n:'VPN',s:'ok'},
+        {n:'Impresora',s:'fail'},
+        {n:'API Pagos',s:'intermittent'},
+        {n:'Backup',s:'ok'},
+        {n:'Cache',s:'intermittent'}
+    ];
+    const table=document.getElementById('monTable');
+    table.innerHTML='<tr><th>Sistema</th><th>Estado</th></tr>'+systems.map(s=>`<tr><td>${s.n}</td><td class="${s.s}">${s.s}</td></tr>`).join('');
+}
+
+function loadOrgChart(){
+    const chart=`graph TD;
+        A[Jefe Supremo];
+        B[Gerente TI];
+        C[Primo del jefe];
+        D[Jardinero\\nEncargado de la base de datos];
+        A-->B;
+        A-->C;
+        B-->D;`;
+    document.getElementById('orgChart').innerHTML=`<pre class="mermaid">${chart}</pre>`;
+    if(window.mermaid){mermaid.init(undefined, '#orgChart .mermaid');}
+}
+
+function loadInfra(){
+    const diagram=`graph LR;
+        PC[Oficina]-->S1((Servidor 1));
+        S1-->S2((Servidor 2));
+        S2-->DB[(Base de Datos)];
+        DB-->Bano[Ba\u00f1o];`;
+    document.getElementById('infraDiagram').innerHTML=`<pre class="mermaid">${diagram}</pre>`;
+    if(window.mermaid){mermaid.init(undefined, '#infraDiagram .mermaid');}
 }
 
 function loadDB(){
@@ -120,13 +202,18 @@ function initEditor(){
 function init(){
     initIcons();
     initControls();
+    initStartMenu();
     dragWindows();
+    dragIcons();
     updateClock();
     setInterval(updateClock,1000);
     drawCharts();
     loadDB();
     loadProcesses();
+    loadMonitor();
     loadMails();
+    loadOrgChart();
+    loadInfra();
     initEditor();
 }
 

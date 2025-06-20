@@ -8,12 +8,38 @@
 </head>
 <body>
     <div id="desktop">
-        <div class="icon" data-window="dbWindow"><span>Base de Datos</span></div>
-        <div class="icon" data-window="infraWindow"><span>Mapa de Infraestructura</span></div>
-        <div class="icon" data-window="procWindow"><span>Administrador de Procesos</span></div>
-        <div class="icon" data-window="textWindow"><span>Motor de Texto</span></div>
-        <div class="icon" data-window="contaWindow"><span>Contabilidad</span></div>
-        <div class="icon" data-window="mailWindow"><span>Hedwig Mail</span></div>
+        <div class="icon" data-window="dbWindow">
+            <img src="https://cdn-icons-png.flaticon.com/512/907/907870.png" alt="db">
+            <span>Base de Datos</span>
+        </div>
+        <div class="icon" data-window="infraWindow">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="infra">
+            <span>Mapa de Infraestructura</span>
+        </div>
+        <div class="icon" data-window="procWindow">
+            <img src="https://cdn-icons-png.flaticon.com/512/3444/3444546.png" alt="proc">
+            <span>Administrador de Procesos</span>
+        </div>
+        <div class="icon" data-window="textWindow">
+            <img src="https://cdn-icons-png.flaticon.com/512/2965/2965278.png" alt="text">
+            <span>Motor de Texto</span>
+        </div>
+        <div class="icon" data-window="contaWindow">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="conta">
+            <span>Contabilidad</span>
+        </div>
+        <div class="icon" data-window="mailWindow">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="mail">
+            <span>Hedwig Mail</span>
+        </div>
+        <div class="icon" data-window="monWindow">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828557.png" alt="mon">
+            <span>Monitoreo</span>
+        </div>
+        <div class="icon" data-window="orgWindow">
+            <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" alt="org">
+            <span>Organigrama</span>
+        </div>
     </div>
 
     <div id="dbWindow" class="window">
@@ -38,7 +64,7 @@
             </div>
         </div>
         <div class="window-content">
-            <img id="infraImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAgMCAfDwRqsAAAAASUVORK5CYII=" alt="Mapa">
+            <div id="infraDiagram"></div>
             <p class="notice">Servidor ubicado erróneamente en el baño.</p>
         </div>
     </div>
@@ -100,13 +126,46 @@
         </div>
     </div>
 
+    <div id="monWindow" class="window">
+        <div class="title-bar"><span>Monitoreo</span>
+            <div class="window-buttons">
+                <button class="minimize">_</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <table id="monTable"></table>
+        </div>
+    </div>
+
+    <div id="orgWindow" class="window">
+        <div class="title-bar"><span>Organigrama</span>
+            <div class="window-buttons">
+                <button class="minimize">_</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div id="orgChart"></div>
+        </div>
+    </div>
+
     <div id="taskbar">
         <button id="startBtn">Inicio</button>
         <div id="taskItems"></div>
         <span id="clock"></span>
     </div>
+    <div id="startMenu">
+        <ul>
+            <li data-window="dbWindow">Base de Datos</li>
+            <li data-window="infraWindow">Infraestructura</li>
+            <li data-window="monWindow">Monitoreo</li>
+            <li data-window="orgWindow">Organigrama</li>
+        </ul>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
