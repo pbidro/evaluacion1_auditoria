@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministerio OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div class="icon" data-window="dbWindow">
+            <span>Base de Datos</span>
+        </div>
+        <div class="icon" data-window="infraWindow">
+            <span>Mapa de Infraestructura</span>
+        </div>
+        <div class="icon" data-window="procWindow">
+            <span>Administrador de Procesos</span>
+        </div>
+        <div class="icon" data-window="licenseWindow">
+            <span>Licencia Texto</span>
+        </div>
+        <div class="icon" data-window="contaWindow">
+            <span>Contabilidad Mágica</span>
+        </div>
+        <div class="icon" data-window="mailWindow">
+            <span>Hedwig Mail</span>
+        </div>
+    </div>
+
+    <div id="dbWindow" class="window">
+        <div class="title-bar">Base de Datos de Alumnos<button class="close">X</button></div>
+        <pre id="dbData">{
+    "alumnos": [
+        {"nombre": "Harry Potter", "rut": "12345678-9", "direccion": "4 Privet Drive"},
+        {"nombre": "Hermione Granger", "rut": "98765432-1", "direccion": "Heathgate"}
+    ]
+}</pre>
+    </div>
+
+    <div id="infraWindow" class="window">
+        <div class="title-bar">Mapa de Infraestructura<button class="close">X</button></div>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAgMCAfDwRqsAAAAASUVORK5CYII=" alt="Mapa de servidores" class="content-img">
+        <p>Nota: uno de los servidores está ubicado en el baño.</p>
+    </div>
+
+    <div id="procWindow" class="window">
+        <div class="title-bar">Administrador de Procesos<button class="close">X</button></div>
+        <ul>
+            <li>proceso.exe - Error</li>
+            <li>proceso.exe - Error (duplicado)</li>
+            <li>lognmanager - ???</li>
+        </ul>
+    </div>
+
+    <div id="licenseWindow" class="window">
+        <div class="title-bar">Licencia del Motor de Texto<button class="close">X</button></div>
+        <p>La licencia gratuita ha expirado. El software continúa en uso sin renovación.</p>
+    </div>
+
+    <div id="contaWindow" class="window">
+        <div class="title-bar">Contabilidad Mágica<button class="close">X</button></div>
+        <canvas id="chart1" width="200" height="150"></canvas>
+        <canvas id="chart2" width="200" height="150"></canvas>
+    </div>
+
+    <div id="mailWindow" class="window">
+        <div class="title-bar">Hedwig Mail<button class="close">X</button></div>
+        <ul>
+            <li>Correo 1: "Adjunto contrato sin cifrar..."</li>
+            <li>Correo 2: "Prácticas cuestionables..."</li>
+        </ul>
+    </div>
+
+    <div id="taskbar">
+        <span id="clock"></span>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

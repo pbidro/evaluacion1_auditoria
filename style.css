@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#c0c0ff,#8080ff);
+    color: #000;
+}
+
+#desktop {
+    position: relative;
+    height: calc(100vh - 30px);
+    padding: 10px;
+}
+
+.icon {
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    display: inline-block;
+}
+
+.icon-img {
+    width: 48px;
+    height: 48px;
+}
+
+.window {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    background: #eee;
+    border: 2px solid #111;
+    display: none;
+}
+
+.title-bar {
+    background: #333;
+    color: #fff;
+    padding: 4px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-bar button {
+    background: red;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+}
