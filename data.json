@@ -1,0 +1,7 @@
+{
+  "alumnos": [
+    {"nombre": "Harry Potter", "rut": "12345678-9", "direccion": "4 Privet Drive"},
+    {"nombre": "Hermione Granger", "rut": "98765432-1", "direccion": "Heathgate"},
+    {"nombre": "Ron Weasley", "rut": "24681357-5", "direccion": "La Madriguera"}
+  ]
+}
