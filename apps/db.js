@@ -17,18 +17,24 @@ function loadDB(){
             }
         }
 
+        const tree=document.createElement('ul');
+        tree.className='filetree';
+        nav.appendChild(tree);
+
         Object.keys(data).forEach(ds=>{
-            const dsDiv=document.createElement('div');
-            dsDiv.textContent=ds;
+            const dsLi=document.createElement('li');
+            dsLi.textContent=ds;
+            dsLi.classList.add('collapsed');
             const ul=document.createElement('ul');
             Object.keys(data[ds]).forEach(tb=>{
                 const li=document.createElement('li');
                 li.textContent=tb;
-                li.addEventListener('click',()=>render(ds,tb));
+                li.addEventListener('click',e=>{e.stopPropagation();render(ds,tb);});
                 ul.appendChild(li);
             });
-            dsDiv.appendChild(ul);
-            nav.appendChild(dsDiv);
+            dsLi.appendChild(ul);
+            dsLi.addEventListener('click',()=>dsLi.classList.toggle('collapsed'));
+            tree.appendChild(dsLi);
         });
 
         const firstDs=Object.keys(data)[0];
