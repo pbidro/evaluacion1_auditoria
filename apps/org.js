@@ -56,6 +56,8 @@ function loadOrgChart(){
         HeadADM-->ADM9["Kreacher\nServicios"];
         HeadADM-->ADM10["Winky\nAsistente"];
     `;
-    document.getElementById('orgChart').innerHTML=`<pre class="mermaid">${chart}</pre>`;
+    const container=document.getElementById('orgChart');
+    container.innerHTML=`<pre class="mermaid">${chart}</pre>`;
     if(window.mermaid){mermaid.init(undefined, '#orgChart .mermaid');}
+    if(window.enablePanning) enablePanning(container);
 }

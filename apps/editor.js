@@ -1,5 +1,6 @@
 function initEditor(){
     const editor = document.getElementById('editor');
+    editor.innerHTML = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>';
     document.getElementById('newDoc').addEventListener('click',()=>{editor.innerHTML='';});
     document.getElementById('openDoc').addEventListener('click',()=>{editor.innerHTML='<p>Contenido de ejemplo</p>';});
     document.getElementById('saveDoc').addEventListener('click',()=>alert('Documento guardado (simulado)'));
