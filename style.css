@@ -124,19 +124,6 @@ body {
     min-width: 28px;
 }
 
-#textWindow .window-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.editor-area {
-    flex: 1;
-    min-height: 0;
-    border: 1px solid #ccc;
-    padding: 4px;
-    overflow-y: auto;
-}
-
 .license-msg {
     position: absolute;
     bottom: 4px;
