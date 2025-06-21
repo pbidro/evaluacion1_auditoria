@@ -46,6 +46,8 @@ function loadInfra(){
             p5h1 --> p5srv(Servidor Principal);
             p5h2 --> p5sw(Switch Backup);
         end`;
-    document.getElementById('infraDiagram').innerHTML=`<pre class="mermaid">${diagram}</pre>`;
+    const container=document.getElementById('infraDiagram');
+    container.innerHTML=`<pre class="mermaid">${diagram}</pre>`;
     if(window.mermaid){mermaid.init(undefined, '#infraDiagram .mermaid');}
+    if(window.enablePanning) enablePanning(container);
 }

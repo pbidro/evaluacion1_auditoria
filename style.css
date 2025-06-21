@@ -121,10 +121,10 @@ body {
 }
 .editor-area {
     border: 1px solid #ccc;
-    min-height: 200px;
     padding: 4px;
     width: 100%;
     overflow-y: auto;
+    flex: 1;
 }
 .toolbar button {
     margin-right: 4px;
@@ -323,4 +323,29 @@ body {
 
 .mui-mt-2 {
     margin-top: 0.5rem;
+}
+
+/* custom layouts */
+#textWindow .window-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#infraWindow .window-content,
+#orgWindow .window-content {
+    padding: 0;
+    overflow: hidden;
+}
+
+#infraDiagram,
+#orgChart {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    cursor: grab;
+}
+
+#infraDiagram.panning,
+#orgChart.panning {
+    cursor: grabbing;
 }

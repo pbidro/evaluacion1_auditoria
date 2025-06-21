@@ -177,7 +177,28 @@ function dragIcons(){
                 icon.style.top=(e.clientY-offsetY)+'px';
             }
         });
-        document.addEventListener('mouseup', ()=>dragging=false);
+    document.addEventListener('mouseup', ()=>dragging=false);
+    });
+}
+
+function enablePanning(el){
+    let isDown=false,startX,startY,scrollLeft,scrollTop;
+    el.addEventListener('mousedown',e=>{
+        isDown=true;
+        el.classList.add('panning');
+        startX=e.clientX;
+        startY=e.clientY;
+        scrollLeft=el.scrollLeft;
+        scrollTop=el.scrollTop;
+    });
+    document.addEventListener('mousemove',e=>{
+        if(!isDown) return;
+        el.scrollLeft=scrollLeft-(e.clientX-startX);
+        el.scrollTop=scrollTop-(e.clientY-startY);
+    });
+    document.addEventListener('mouseup',()=>{
+        isDown=false;
+        el.classList.remove('panning');
     });
 }
 
