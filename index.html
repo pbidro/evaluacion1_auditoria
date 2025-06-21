@@ -9,40 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="desktop">
-        <div class="icon" data-window="dbWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="db">
-            <span>Base de Datos</span>
-        </div>
-        <div class="icon" data-window="infraWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/3474/3474369.png" alt="infra">
-            <span>Mapa de Infraestructura</span>
-        </div>
-        <div class="icon" data-window="procWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/865/865821.png" alt="proc">
-            <span>Administrador de Procesos</span>
-        </div>
-        <div class="icon" data-window="textWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/1027/1027219.png" alt="text">
-            <span>Motor de Texto</span>
-        </div>
-        <div class="icon" data-window="contaWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/1773/1773381.png" alt="conta">
-            <span>Contabilidad</span>
-        </div>
-        <div class="icon" data-window="mailWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/616/616490.png" alt="mail">
-            <span>Hedwig Mail</span>
-        </div>
-        <div class="icon" data-window="monWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/3103/3103493.png" alt="mon">
-            <span>Monitoreo</span>
-        </div>
-        <div class="icon" data-window="orgWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/764/764460.png" alt="org">
-            <span>Organigrama</span>
-        </div>
-    </div>
+    <div id="desktop"></div>
 
     <div id="dbWindow" class="window">
         <div class="title-bar"><span>Base de Datos</span>
@@ -173,12 +140,7 @@
         <span id="clock"></span>
     </div>
     <div id="startMenu">
-        <ul>
-            <li data-window="dbWindow">Base de Datos</li>
-            <li data-window="infraWindow">Infraestructura</li>
-            <li data-window="monWindow">Monitoreo</li>
-            <li data-window="orgWindow">Organigrama</li>
-        </ul>
+        <ul></ul>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -187,6 +149,14 @@
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="apps/db.js"></script>
+    <script src="apps/infra.js"></script>
+    <script src="apps/process.js"></script>
+    <script src="apps/editor.js"></script>
+    <script src="apps/conta.js"></script>
+    <script src="apps/mail.js"></script>
+    <script src="apps/monitor.js"></script>
+    <script src="apps/org.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

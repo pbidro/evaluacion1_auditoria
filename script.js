@@ -1,4 +1,5 @@
 let topZ = 1;
+let enabledPrograms = [];
 
 function bringToFront(win){
     win.style.zIndex = ++topZ;
@@ -185,121 +186,6 @@ function updateClock(){
     document.getElementById('clock').textContent = now.toLocaleTimeString();
 }
 
-function drawCharts(){
-    const ctx1 = document.getElementById('chart1').getContext('2d');
-    const ctx2 = document.getElementById('chart2').getContext('2d');
-    new Chart(ctx1,{type:'bar',data:{labels:['Ene','Feb'],datasets:[{label:'Sistema oficial',data:[100,200],backgroundColor:'blue'}]},options:{responsive:false}});
-    new Chart(ctx2,{type:'bar',data:{labels:['Ene','Feb'],datasets:[{label:'Software interno',data:[80,250],backgroundColor:'green'}]},options:{responsive:false}});
-}
-
-function loadMonitor(){
-    const systems=[
-        {n:'Servidor Web',s:'ok'},
-        {n:'Base de Datos',s:'ok'},
-        {n:'Correo',s:'fail'},
-        {n:'VPN',s:'ok'},
-        {n:'Impresora',s:'fail'},
-        {n:'API Pagos',s:'intermittent'},
-        {n:'Backup',s:'ok'},
-        {n:'Cache',s:'intermittent'}
-    ];
-    const table=document.getElementById('monTable');
-    table.innerHTML='<tr><th>Sistema</th><th>Estado</th></tr>'+systems.map(s=>`<tr><td>${s.n}</td><td class="${s.s}">${s.s}</td></tr>`).join('');
-}
-
-function loadOrgChart(){
-    const chart=`graph TD;
-        A[Jefe Supremo];
-        B[Gerente TI];
-        C[Primo del jefe];
-        D[Jardinero\\nEncargado de la base de datos];
-        A-->B;
-        A-->C;
-        B-->D;`;
-    document.getElementById('orgChart').innerHTML=`<pre class="mermaid">${chart}</pre>`;
-    if(window.mermaid){mermaid.init(undefined, '#orgChart .mermaid');}
-}
-
-function loadInfra(){
-    const diagram=`graph LR;
-        PC[Oficina]-->S1((Servidor 1));
-        S1-->S2((Servidor 2));
-        S2-->DB[(Base de Datos)];
-        DB-->Bano[Ba\u00f1o];`;
-    document.getElementById('infraDiagram').innerHTML=`<pre class="mermaid">${diagram}</pre>`;
-    if(window.mermaid){mermaid.init(undefined, '#infraDiagram .mermaid');}
-}
-
-function loadDB(){
-    fetch('data.json').then(r=>r.json()).then(data=>{
-        const nav=document.getElementById('dbNav');
-        const table=document.getElementById('dbTable');
-        nav.innerHTML='';
-
-        function render(ds,tb){
-            const rows=data[ds][tb];
-            if(!rows||!rows.length) return;
-            const keys=Object.keys(rows[0]);
-            table.innerHTML='<thead><tr>'+keys.map(k=>`<th>${k}</th>`).join('')+'</tr></thead><tbody>'+
-                rows.map(r=>'<tr>'+keys.map(k=>`<td>${r[k]}</td>`).join('')+'</tr>').join('')+
-                '</tbody>';
-            if(window.jQuery && $(table).DataTable){
-                if($.fn.DataTable.isDataTable(table)) $(table).DataTable().destroy();
-                $(table).DataTable({paging:true,searching:true,info:false,lengthChange:false});
-            }
-        }
-
-        Object.keys(data).forEach(ds=>{
-            const dsDiv=document.createElement('div');
-            dsDiv.textContent=ds;
-            const ul=document.createElement('ul');
-            Object.keys(data[ds]).forEach(tb=>{
-                const li=document.createElement('li');
-                li.textContent=tb;
-                li.addEventListener('click',()=>render(ds,tb));
-                ul.appendChild(li);
-            });
-            dsDiv.appendChild(ul);
-            nav.appendChild(dsDiv);
-        });
-
-        const firstDs=Object.keys(data)[0];
-        const firstTb=Object.keys(data[firstDs])[0];
-        render(firstDs,firstTb);
-    });
-}
-
-function loadProcesses(){
-    const data=[['proceso.exe','Error'],['proceso.exe','Error'],['loginmanager','???']];
-    const table=document.getElementById('procTable');
-    table.innerHTML='<tr><th>Proceso</th><th>Estado</th></tr>'+data.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td></tr>`).join('');
-}
-
-function loadMails(){
-    fetch('mails.json').then(r=>r.json()).then(mails=>{
-        const list=document.getElementById('mailList');
-        const view=document.getElementById('mailView');
-        list.innerHTML='';
-        mails.forEach((m,i)=>{
-            const item=document.createElement('div');
-            item.className='list-group-item list-group-item-action mail-item';
-            item.innerHTML=`<strong>${m.subject}</strong><br><small>${m.from} - ${m.date}</small>`;
-            item.addEventListener('click',()=>{
-                document.querySelectorAll('#mailList .mail-item').forEach(el=>el.classList.remove('selected'));
-                item.classList.add('selected');
-                view.innerHTML=`<h5>${m.subject}</h5><p><strong>De:</strong> ${m.from}<br><strong>Para:</strong> ${m.to}<br><strong>Fecha:</strong> ${m.date}</p><p>${m.body}</p>`;
-            });
-            list.appendChild(item);
-            if(i===0) item.click();
-        });
-    });
-}
-
-function initEditor(){
-    document.getElementById('newDoc').addEventListener('click',()=>{document.getElementById('editor').value='';});
-    document.getElementById('openDoc').addEventListener('click',()=>{document.getElementById('editor').value='Contenido de ejemplo';});
-    document.getElementById('saveDoc').addEventListener('click',()=>alert('Documento guardado (simulado)'));
-}
 
 function init(){
     initIcons();
@@ -310,14 +196,40 @@ function init(){
     dragIcons();
     updateClock();
     setInterval(updateClock,1000);
-    drawCharts();
-    loadDB();
-    loadProcesses();
-    loadMonitor();
-    loadMails();
-    loadOrgChart();
-    loadInfra();
-    initEditor();
+    if(enabledPrograms.includes('contaWindow')) drawCharts();
+    if(enabledPrograms.includes('dbWindow')) loadDB();
+    if(enabledPrograms.includes('procWindow')) loadProcesses();
+    if(enabledPrograms.includes('monWindow')) loadMonitor();
+    if(enabledPrograms.includes('mailWindow')) loadMails();
+    if(enabledPrograms.includes('orgWindow')) loadOrgChart();
+    if(enabledPrograms.includes('infraWindow')) loadInfra();
+    if(enabledPrograms.includes('textWindow')) initEditor();
 }
 
-window.onload=init;
+function loadPrograms(){
+    return fetch('programs.json').then(r=>r.json()).then(data=>{
+        const desktop=document.getElementById('desktop');
+        const menu=document.querySelector('#startMenu ul');
+        data.forEach(p=>{
+            if(p.enabled===false){
+                const w=document.getElementById(p.id);
+                if(w) w.remove();
+                return;
+            }
+            enabledPrograms.push(p.id);
+            const icon=document.createElement('div');
+            icon.className='icon';
+            icon.dataset.window=p.id;
+            icon.innerHTML=`<img src="${p.icon}" alt="${p.id}"><span>${p.name}</span>`;
+            desktop.appendChild(icon);
+            const li=document.createElement('li');
+            li.dataset.window=p.id;
+            li.textContent=p.name;
+            menu.appendChild(li);
+        });
+    });
+}
+
+window.onload=()=>{
+    loadPrograms().then(init);
+};
