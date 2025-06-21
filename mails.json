@@ -1,0 +1,72 @@
+[
+    {
+        "from": "percy.weasley@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-01 08:15",
+        "subject": "Bitácoras incompletas",
+        "body": "Hola, he notado que los registros de acceso al sistema de varitas han sido truncados cada noche para ahorrar espacio. Esto podría violar las políticas de retención de datos del Ministerio."
+    },
+    {
+        "from": "arthur.weasley@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-02 09:30",
+        "subject": "Uso no autorizado de encantamientos",
+        "body": "Buenos días, se detectó que la división de investigación usa un hechizo no aprobado para modificar archivos de configuración en producción sin registro."
+    },
+    {
+        "from": "hermione.granger@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-03 10:00",
+        "subject": "Contraseñas en texto plano",
+        "body": "En un repositorio interno se encontraron credenciales del portal de muggles almacenadas en texto plano. Solicito revisión urgente."
+    },
+    {
+        "from": "r.hagrid@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-04 14:45",
+        "subject": "Criaturas cerca del servidor",
+        "body": "Se ha visto a un hipogrifo merodeando la sala de servidores. No es un riesgo directo de software, pero interrumpe las copias de seguridad."
+    },
+    {
+        "from": "minerva.mcgonagall@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-05 11:20",
+        "subject": "Permisos excesivos en el sistema de calderos",
+        "body": "Algunos usuarios junior tienen permisos de administrador en el sistema de seguimiento de calderos. Recomiendo revisar la asignación de roles."
+    },
+    {
+        "from": "severus.snape@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-06 16:10",
+        "subject": "Pociones almacenadas sin etiqueta",
+        "body": "Los frascos de pociones en el laboratorio de TI carecen de identificación. Podrían ser tóxicos para los dispositivos si se derraman."
+    },
+    {
+        "from": "gilderoy.lockhart@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-07 12:00",
+        "subject": "Campaña publicitaria sospechosa",
+        "body": "Marketing está enviando correos masivos a direcciones que no han aceptado recibir mensajes. Podría considerarse spam mágico."
+    },
+    {
+        "from": "lucius.malfoy@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-08 17:25",
+        "subject": "Soborno para modificar reportes",
+        "body": "Se rumorea que un contratista ofreció galeones a un desarrollador para alterar los reportes de auditoría de varitas usadas."
+    },
+    {
+        "from": "albus.dumbledore@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-09 13:50",
+        "subject": "Hechizos sin trazabilidad",
+        "body": "Se realizan conjuros sobre la base de datos sin registrar quién los ejecuta. Necesitamos implementar registro de auditoría mágica."
+    },
+    {
+        "from": "dolores.umbridge@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-10 15:40",
+        "subject": "Incumplimiento de estándares",
+        "body": "La oficina de decretos mágicos no sigue las directrices de desarrollo seguro. Requiere atención inmediata para evitar incidentes."
+    }
+]
