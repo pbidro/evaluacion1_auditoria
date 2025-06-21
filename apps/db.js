@@ -23,12 +23,12 @@ function loadDB(){
 
         Object.keys(data).forEach(ds=>{
             const dsLi=document.createElement('li');
-            dsLi.textContent=ds;
+            dsLi.innerHTML=`<i class="fa-solid fa-database"></i> <span>${ds}</span>`;
             dsLi.classList.add('collapsed');
             const ul=document.createElement('ul');
             Object.keys(data[ds]).forEach(tb=>{
                 const li=document.createElement('li');
-                li.textContent=tb;
+                li.innerHTML=`<i class="fa-solid fa-table"></i> <span>${tb}</span>`;
                 li.addEventListener('click',e=>{e.stopPropagation();render(ds,tb);});
                 ul.appendChild(li);
             });
