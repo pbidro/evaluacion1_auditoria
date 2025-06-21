@@ -11,35 +11,35 @@
 <body>
     <div id="desktop">
         <div class="icon" data-window="dbWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/907/907870.png" alt="db">
+            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="db">
             <span>Base de Datos</span>
         </div>
         <div class="icon" data-window="infraWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="infra">
+            <img src="https://cdn-icons-png.flaticon.com/512/3474/3474369.png" alt="infra">
             <span>Mapa de Infraestructura</span>
         </div>
         <div class="icon" data-window="procWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/3444/3444546.png" alt="proc">
+            <img src="https://cdn-icons-png.flaticon.com/512/865/865821.png" alt="proc">
             <span>Administrador de Procesos</span>
         </div>
         <div class="icon" data-window="textWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/2965/2965278.png" alt="text">
+            <img src="https://cdn-icons-png.flaticon.com/512/1027/1027219.png" alt="text">
             <span>Motor de Texto</span>
         </div>
         <div class="icon" data-window="contaWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="conta">
+            <img src="https://cdn-icons-png.flaticon.com/512/1773/1773381.png" alt="conta">
             <span>Contabilidad</span>
         </div>
         <div class="icon" data-window="mailWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="mail">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616490.png" alt="mail">
             <span>Hedwig Mail</span>
         </div>
         <div class="icon" data-window="monWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828557.png" alt="mon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3103/3103493.png" alt="mon">
             <span>Monitoreo</span>
         </div>
         <div class="icon" data-window="orgWindow">
-            <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" alt="org">
+            <img src="https://cdn-icons-png.flaticon.com/512/764/764460.png" alt="org">
             <span>Organigrama</span>
         </div>
     </div>
@@ -52,8 +52,11 @@
                 <button class="close">X</button>
             </div>
         </div>
-        <div class="window-content">
-            <table id="dbTable" class="table table-striped"></table>
+        <div class="window-content db">
+            <div id="dbNav" class="db-nav"></div>
+            <div class="db-table-container">
+                <table id="dbTable" class="table table-striped"></table>
+            </div>
             <p class="notice">Este es un entorno de pruebas. Algunos datos pueden no ser reales.</p>
         </div>
     </div>
@@ -98,9 +101,14 @@
                 <button id="newDoc">Nuevo</button>
                 <button id="openDoc">Abrir</button>
                 <button id="saveDoc">Guardar</button>
+                <button>Copiar</button>
+                <button>Pegar</button>
+                <button>Negrita</button>
+                <button>Cursiva</button>
+                <button>Subrayado</button>
             </div>
             <textarea id="editor" rows="10"></textarea>
-            <p class="notice">Licencia gratuita expirada. Sistema disponible solo en modo prueba.</p>
+            <div id="licenseMsg" class="license-msg">Licencia vencida</div>
         </div>
     </div>
 
