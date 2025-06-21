@@ -46,6 +46,8 @@ function openWindow(id){
     if(!win.dataset.opened){
         win.dataset.opened = '1';
         toggleMaximize(win);
+        if(id==='orgWindow') loadOrgChart();
+        if(id==='infraWindow') loadInfra();
     }
     bringToFront(win);
     createTaskItem(id);
@@ -222,8 +224,8 @@ function init(){
     if(enabledPrograms.includes('procWindow')) loadProcesses();
     if(enabledPrograms.includes('monWindow')) loadMonitor();
     if(enabledPrograms.includes('mailWindow')) loadMails();
-    if(enabledPrograms.includes('orgWindow')) loadOrgChart();
-    if(enabledPrograms.includes('infraWindow')) loadInfra();
+    // orgWindow and infraWindow use GoJS which requires visible containers.
+    // Load their data only when the windows are opened for the first time.
     if(enabledPrograms.includes('textWindow')) initEditor();
 }
 
