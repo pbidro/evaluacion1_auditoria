@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dbWindow",
+    "name": "Base de Datos",
+    "icon": "https://cdn-icons-png.flaticon.com/512/3075/3075977.png",
+    "enabled": true
+  },
+  {
+    "id": "infraWindow",
+    "name": "Mapa de Infraestructura",
+    "icon": "https://cdn-icons-png.flaticon.com/512/3474/3474369.png",
+    "enabled": true
+  },
+  {
+    "id": "procWindow",
+    "name": "Administrador de Procesos",
+    "icon": "https://cdn-icons-png.flaticon.com/512/865/865821.png",
+    "enabled": true
+  },
+  {
+    "id": "textWindow",
+    "name": "Motor de Texto",
+    "icon": "https://cdn-icons-png.flaticon.com/512/1027/1027219.png",
+    "enabled": true
+  },
+  {
+    "id": "contaWindow",
+    "name": "Contabilidad",
+    "icon": "https://cdn-icons-png.flaticon.com/512/1773/1773381.png",
+    "enabled": true
+  },
+  {
+    "id": "mailWindow",
+    "name": "Hedwig Mail",
+    "icon": "https://cdn-icons-png.flaticon.com/512/616/616490.png",
+    "enabled": true
+  },
+  {
+    "id": "monWindow",
+    "name": "Monitoreo",
+    "icon": "https://cdn-icons-png.flaticon.com/512/3103/3103493.png",
+    "enabled": true
+  },
+  {
+    "id": "orgWindow",
+    "name": "Organigrama",
+    "icon": "https://cdn-icons-png.flaticon.com/512/764/764460.png",
+    "enabled": true
+  }
+]
