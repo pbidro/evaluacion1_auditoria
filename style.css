@@ -81,24 +81,31 @@ body {
 
 .mail {
     display: flex;
+    height: calc(100% - 20px);
 }
 
 #mailList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     width: 40%;
     border-right: 1px solid #ccc;
+    overflow-y: auto;
 }
 
-#mailList li {
-    padding: 4px;
+#mailList .mail-item {
     cursor: pointer;
 }
 
+#mailList .mail-item.selected {
+    background: #e5f1fb;
+}
+
 #mailView {
-    padding: 4px;
+    padding: 8px;
     width: 60%;
+    overflow-y: auto;
+}
+
+#mailView h5 {
+    margin-top: 0;
 }
 
 #taskbar {
