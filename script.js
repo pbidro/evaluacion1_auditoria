@@ -163,14 +163,12 @@ function loadInfra(){
 function loadDB(){
     fetch('data.json').then(r=>r.json()).then(data=>{
         const table=document.getElementById('dbTable');
-        table.innerHTML='<tr><th>Nombre</th><th>RUT</th><th>Dirección</th></tr>'+
-            data.alumnos.map(a=>`<tr><td>${a.nombre}</td><td>${a.rut}</td><td>${a.direccion}</td></tr>`).join('');
-        document.getElementById('dbSearch').addEventListener('input',e=>{
-            const term=e.target.value.toLowerCase();
-            Array.from(table.querySelectorAll('tr')).slice(1).forEach(row=>{
-                row.style.display=row.textContent.toLowerCase().includes(term)?'':'none';
-            });
-        });
+        table.innerHTML='<thead><tr><th>Nombre</th><th>RUT</th><th>Dirección</th></tr></thead><tbody>'+
+            data.alumnos.map(a=>`<tr><td>${a.nombre}</td><td>${a.rut}</td><td>${a.direccion}</td></tr>`).join('')+
+            '</tbody>';
+        if(window.jQuery && $(table).DataTable){
+            $(table).DataTable({paging:true,searching:true,info:false,lengthChange:false});
+        }
     });
 }
 
@@ -181,15 +179,22 @@ function loadProcesses(){
 }
 
 function loadMails(){
-    const mails=[{asunto:'Contrato sin cifrar',cuerpo:'Adjunto contrato sin cifrar...'},
-                 {asunto:'Prácticas cuestionables',cuerpo:'Se realizan prácticas dudosas...'}];
-    const list=document.getElementById('mailList');
-    const view=document.getElementById('mailView');
-    mails.forEach((m,i)=>{
-        const li=document.createElement('li');
-        li.textContent=m.asunto;
-        li.addEventListener('click',()=>{view.textContent=m.cuerpo;});
-        list.appendChild(li);
+    fetch('mails.json').then(r=>r.json()).then(mails=>{
+        const list=document.getElementById('mailList');
+        const view=document.getElementById('mailView');
+        list.innerHTML='';
+        mails.forEach((m,i)=>{
+            const item=document.createElement('div');
+            item.className='list-group-item list-group-item-action mail-item';
+            item.innerHTML=`<strong>${m.subject}</strong><br><small>${m.from} - ${m.date}</small>`;
+            item.addEventListener('click',()=>{
+                document.querySelectorAll('#mailList .mail-item').forEach(el=>el.classList.remove('selected'));
+                item.classList.add('selected');
+                view.innerHTML=`<h5>${m.subject}</h5><p><strong>De:</strong> ${m.from}<br><strong>Para:</strong> ${m.to}<br><strong>Fecha:</strong> ${m.date}</p><p>${m.body}</p>`;
+            });
+            list.appendChild(item);
+            if(i===0) item.click();
+        });
     });
 }
 
