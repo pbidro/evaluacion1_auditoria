@@ -49,7 +49,6 @@ body {
     display: none;
     box-shadow: 3px 3px 8px rgba(0,0,0,0.5);
     overflow: hidden;
-    display: flex;
     flex-direction: column;
 }
 
@@ -182,6 +181,20 @@ body {
 
 #mailView h5 {
     margin-top: 0;
+}
+
+.filetree,
+.filetree ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.filetree li {
+    cursor: pointer;
+}
+
+.filetree li.collapsed > ul {
+    display: none;
 }
 
 #taskbar {
