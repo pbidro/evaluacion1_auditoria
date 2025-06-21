@@ -830,5 +830,15 @@
         "fecha": "2023-06-20"
       }
     ]
+  },
+  "Quidditch": {
+    "Equipos": [
+      {"nombre": "Chudley Cannons", "region": "Reino Unido"},
+      {"nombre": "Puddlemere United", "region": "Reino Unido"}
+    ],
+    "Jugadores": [
+      {"nombre": "Oliver Wood", "equipo": "Puddlemere United"},
+      {"nombre": "Viktor Krum", "equipo": "Bulgaria"}
+    ]
   }
 }

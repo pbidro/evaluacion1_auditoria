@@ -6,6 +6,7 @@
     <title>Ministerio OS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magic-ui/dist/magic-ui.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,9 +15,9 @@
     <div id="dbWindow" class="window mui-window">
         <div class="title-bar"><span>Base de Datos</span>
             <div class="window-buttons">
-                <button class="minimize mui-btn">_</button>
-                <button class="maximize mui-btn"></button>
-                <button class="close mui-btn">X</button>
+                <button class="minimize mui-btn" aria-label="Minimizar"></button>
+                <button class="maximize mui-btn" aria-label="Maximizar"></button>
+                <button class="close mui-btn" aria-label="Cerrar"></button>
             </div>
         </div>
         <div class="window-content db">
@@ -24,16 +25,15 @@
             <div class="db-table-container">
                 <table id="dbTable" class="mui-table"></table>
             </div>
-            <p class="notice">Este es un entorno de pruebas. Algunos datos pueden no ser reales.</p>
         </div>
     </div>
 
     <div id="infraWindow" class="window mui-window">
         <div class="title-bar"><span>Mapa de Infraestructura</span>
             <div class="window-buttons">
-                <button class="minimize mui-btn">_</button>
-                <button class="maximize mui-btn"></button>
-                <button class="close mui-btn">X</button>
+                <button class="minimize mui-btn" aria-label="Minimizar"></button>
+                <button class="maximize mui-btn" aria-label="Maximizar"></button>
+                <button class="close mui-btn" aria-label="Cerrar"></button>
             </div>
         </div>
         <div class="window-content">
@@ -45,9 +45,9 @@
     <div id="procWindow" class="window mui-window">
         <div class="title-bar"><span>Administrador de Procesos</span>
             <div class="window-buttons">
-                <button class="minimize mui-btn">_</button>
-                <button class="maximize mui-btn"></button>
-                <button class="close mui-btn">X</button>
+                <button class="minimize mui-btn" aria-label="Minimizar"></button>
+                <button class="maximize mui-btn" aria-label="Maximizar"></button>
+                <button class="close mui-btn" aria-label="Cerrar"></button>
             </div>
         </div>
         <div class="window-content">
@@ -58,23 +58,28 @@
     <div id="textWindow" class="window mui-window">
         <div class="title-bar"><span>Motor de Texto</span>
             <div class="window-buttons">
-                <button class="minimize mui-btn">_</button>
-                <button class="maximize mui-btn"></button>
-                <button class="close mui-btn">X</button>
+                <button class="minimize mui-btn" aria-label="Minimizar"></button>
+                <button class="maximize mui-btn" aria-label="Maximizar"></button>
+                <button class="close mui-btn" aria-label="Cerrar"></button>
             </div>
         </div>
         <div class="window-content">
             <div class="toolbar">
-                <button id="newDoc" class="mui-btn">Nuevo</button>
-                <button id="openDoc" class="mui-btn">Abrir</button>
-                <button id="saveDoc" class="mui-btn">Guardar</button>
-                <button class="mui-btn">Copiar</button>
-                <button class="mui-btn">Pegar</button>
-                <button class="mui-btn">Negrita</button>
-                <button class="mui-btn">Cursiva</button>
-                <button class="mui-btn">Subrayado</button>
+                <button id="newDoc" class="mui-btn"><i class="fa-solid fa-file"></i></button>
+                <button id="openDoc" class="mui-btn"><i class="fa-solid fa-folder-open"></i></button>
+                <button id="saveDoc" class="mui-btn"><i class="fa-solid fa-floppy-disk"></i></button>
+                <button id="copyBtn" class="mui-btn"><i class="fa-solid fa-copy"></i></button>
+                <button id="pasteBtn" class="mui-btn"><i class="fa-solid fa-paste"></i></button>
+                <button id="boldBtn" class="mui-btn"><i class="fa-solid fa-bold"></i></button>
+                <button id="italicBtn" class="mui-btn"><i class="fa-solid fa-italic"></i></button>
+                <button id="underlineBtn" class="mui-btn"><i class="fa-solid fa-underline"></i></button>
+                <button id="alignLeftBtn" class="mui-btn"><i class="fa-solid fa-align-left"></i></button>
+                <button id="alignCenterBtn" class="mui-btn"><i class="fa-solid fa-align-center"></i></button>
+                <button id="alignRightBtn" class="mui-btn"><i class="fa-solid fa-align-right"></i></button>
+                <button id="bulletsBtn" class="mui-btn"><i class="fa-solid fa-list-ul"></i></button>
+                <button id="numberedBtn" class="mui-btn"><i class="fa-solid fa-list-ol"></i></button>
             </div>
-            <textarea id="editor" rows="10"></textarea>
+            <div id="editor" contenteditable="true" class="mui-mt-2 editor-area"></div>
             <div id="licenseMsg" class="license-msg">Licencia vencida</div>
         </div>
     </div>
@@ -82,9 +87,9 @@
     <div id="contaWindow" class="window mui-window">
         <div class="title-bar"><span>Contabilidad</span>
             <div class="window-buttons">
-                <button class="minimize mui-btn">_</button>
-                <button class="maximize mui-btn"></button>
-                <button class="close mui-btn">X</button>
+                <button class="minimize mui-btn" aria-label="Minimizar"></button>
+                <button class="maximize mui-btn" aria-label="Maximizar"></button>
+                <button class="close mui-btn" aria-label="Cerrar"></button>
             </div>
         </div>
         <div class="window-content">
@@ -97,24 +102,23 @@
     <div id="mailWindow" class="window mui-window">
         <div class="title-bar"><span>Hedwig Mail</span>
             <div class="window-buttons">
-                <button class="minimize mui-btn">_</button>
-                <button class="maximize mui-btn"></button>
-                <button class="close mui-btn">X</button>
+                <button class="minimize mui-btn" aria-label="Minimizar"></button>
+                <button class="maximize mui-btn" aria-label="Maximizar"></button>
+                <button class="close mui-btn" aria-label="Cerrar"></button>
             </div>
         </div>
         <div class="window-content mail">
             <div id="mailList" class="mui-list"></div>
             <div id="mailView" class="mail-view"></div>
-            <p class="notice">Este es un sistema de prueba, algunos datos pueden no ser reales.</p>
         </div>
     </div>
 
     <div id="monWindow" class="window mui-window">
         <div class="title-bar"><span>Monitoreo</span>
             <div class="window-buttons">
-                <button class="minimize mui-btn">_</button>
-                <button class="maximize mui-btn"></button>
-                <button class="close mui-btn">X</button>
+                <button class="minimize mui-btn" aria-label="Minimizar"></button>
+                <button class="maximize mui-btn" aria-label="Maximizar"></button>
+                <button class="close mui-btn" aria-label="Cerrar"></button>
             </div>
         </div>
         <div class="window-content">
@@ -125,9 +129,9 @@
     <div id="orgWindow" class="window mui-window">
         <div class="title-bar"><span>Organigrama</span>
             <div class="window-buttons">
-                <button class="minimize mui-btn">_</button>
-                <button class="maximize mui-btn"></button>
-                <button class="close mui-btn">X</button>
+                <button class="minimize mui-btn" aria-label="Minimizar"></button>
+                <button class="maximize mui-btn" aria-label="Maximizar"></button>
+                <button class="close mui-btn" aria-label="Cerrar"></button>
             </div>
         </div>
         <div class="window-content">
