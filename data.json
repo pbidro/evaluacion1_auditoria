@@ -1,56 +1,834 @@
 {
-  "alumnos": [
-    {"nombre": "Harry Potter", "rut": "12345678-9", "direccion": "4 Privet Drive"},
-    {"nombre": "Hermione Granger", "rut": "98765432-1", "direccion": "Heathgate"},
-    {"nombre": "Ron Weasley", "rut": "24681357-5", "direccion": "La Madriguera"},
-    {"nombre": "Albus Dumbledore", "rut": "11111111-1", "direccion": "Hogwarts"},
-    {"nombre": "Severus Snape", "rut": "22222222-2", "direccion": "Hogwarts"},
-    {"nombre": "Rubeus Hagrid", "rut": "33333333-3", "direccion": "Caba\u00f1a"},
-    {"nombre": "Draco Malfoy", "rut": "44444444-4", "direccion": "Mansi\u00f3n Malfoy"},
-    {"nombre": "Luna Lovegood", "rut": "55555555-5", "direccion": "Ottery"},
-    {"nombre": "Ginny Weasley", "rut": "66666666-6", "direccion": "La Madriguera"},
-    {"nombre": "Neville Longbottom", "rut": "77777777-7", "direccion": "Hogwarts"},
-    {"nombre": "Fred Weasley", "rut": "88888888-8", "direccion": "La Madriguera"},
-    {"nombre": "George Weasley", "rut": "99999999-9", "direccion": "La Madriguera"},
-    {"nombre": "Molly Weasley", "rut": "10101010-1", "direccion": "La Madriguera"},
-    {"nombre": "Arthur Weasley", "rut": "11111110-1", "direccion": "La Madriguera"},
-    {"nombre": "Minerva McGonagall", "rut": "12121212-1", "direccion": "Hogwarts"},
-    {"nombre": "Sirius Black", "rut": "13131313-1", "direccion": "Grimmauld Place"},
-    {"nombre": "Remus Lupin", "rut": "14141414-1", "direccion": "Desconocida"},
-    {"nombre": "Dolores Umbridge", "rut": "15151515-1", "direccion": "Ministerio"},
-    {"nombre": "Cornelius Fudge", "rut": "16161616-1", "direccion": "Ministerio"},
-    {"nombre": "Peter Pettigrew", "rut": "17171717-1", "direccion": "Desconocida"},
-    {"nombre": "Cedric Diggory", "rut": "18181818-1", "direccion": "Hogsmeade"},
-    {"nombre": "Cho Chang", "rut": "19191919-1", "direccion": "Hogwarts"},
-    {"nombre": "Viktor Krum", "rut": "20202020-2", "direccion": "Bulgaria"},
-    {"nombre": "Fleur Delacour", "rut": "21212121-2", "direccion": "Francia"},
-    {"nombre": "Nymphadora Tonks", "rut": "23232323-2", "direccion": "Londres"},
-    {"nombre": "Bellatrix Lestrange", "rut": "24242424-2", "direccion": "Azkaban"},
-    {"nombre": "Lucius Malfoy", "rut": "25252525-2", "direccion": "Mansi\u00f3n Malfoy"},
-    {"nombre": "Narcissa Malfoy", "rut": "26262626-2", "direccion": "Mansi\u00f3n Malfoy"},
-    {"nombre": "Gilderoy Lockhart", "rut": "27272727-2", "direccion": "San Mungo"},
-    {"nombre": "Dobby", "rut": "28282828-2", "direccion": "Hogwarts"},
-    {"nombre": "Kreacher", "rut": "29292929-2", "direccion": "Grimmauld Place"},
-    {"nombre": "Kingsley Shacklebolt", "rut": "30303030-3", "direccion": "Ministerio"},
-    {"nombre": "Alastor Moody", "rut": "31313131-3", "direccion": "Desconocida"},
-    {"nombre": "Rita Skeeter", "rut": "32323232-3", "direccion": "Londres"},
-    {"nombre": "Horace Slughorn", "rut": "33333334-3", "direccion": "Hogsmeade"},
-    {"nombre": "Bathilda Bagshot", "rut": "34343434-3", "direccion": "Godric's Hollow"},
-    {"nombre": "Colin Creevey", "rut": "35353535-3", "direccion": "Hogwarts"},
-    {"nombre": "Pansy Parkinson", "rut": "36363636-3", "direccion": "Desconocida"},
-    {"nombre": "Lavender Brown", "rut": "37373737-3", "direccion": "Hogwarts"},
-    {"nombre": "Dean Thomas", "rut": "38383838-3", "direccion": "Londres"},
-    {"nombre": "Seamus Finnigan", "rut": "39393939-3", "direccion": "Irlanda"},
-    {"nombre": "Percy Weasley", "rut": "40404040-4", "direccion": "Ministerio"},
-    {"nombre": "Barty Crouch Jr.", "rut": "41414141-4", "direccion": "Azkaban"},
-    {"nombre": "Barty Crouch Sr.", "rut": "42424242-4", "direccion": "Ministerio"},
-    {"nombre": "Hedwig", "rut": "43434343-4", "direccion": "Con Harry"},
-    {"nombre": "Nearly Headless Nick", "rut": "44444445-4", "direccion": "Hogwarts"},
-    {"nombre": "Bloody Baron", "rut": "45454545-4", "direccion": "Hogwarts"},
-    {"nombre": "Moaning Myrtle", "rut": "46464646-4", "direccion": "Ba\u00f1o"},
-    {"nombre": "Argus Filch", "rut": "47474747-4", "direccion": "Hogwarts"},
-    {"nombre": "Madam Hooch", "rut": "48484848-4", "direccion": "Hogwarts"},
-    {"nombre": "Oliver Wood", "rut": "49494949-4", "direccion": "Hogwarts"},
-    {"nombre": "Angelina Johnson", "rut": "50505050-5", "direccion": "Hogwarts"}
-  ]
+  "Hogwarts": {
+    "Alumnos": [
+      {
+        "nombre": "Harry Potter",
+        "rut": "12345678-9",
+        "direccion": "4 Privet Drive"
+      },
+      {
+        "nombre": "Hermione Granger",
+        "rut": "98765432-1",
+        "direccion": "Heathgate"
+      },
+      {
+        "nombre": "Ron Weasley",
+        "rut": "24681357-5",
+        "direccion": "La Madriguera"
+      },
+      {
+        "nombre": "Albus Dumbledore",
+        "rut": "11111111-1",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Severus Snape",
+        "rut": "22222222-2",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Rubeus Hagrid",
+        "rut": "33333333-3",
+        "direccion": "Cabaña"
+      },
+      {
+        "nombre": "Draco Malfoy",
+        "rut": "44444444-4",
+        "direccion": "Mansión Malfoy"
+      },
+      {
+        "nombre": "Luna Lovegood",
+        "rut": "55555555-5",
+        "direccion": "Ottery"
+      },
+      {
+        "nombre": "Ginny Weasley",
+        "rut": "66666666-6",
+        "direccion": "La Madriguera"
+      },
+      {
+        "nombre": "Neville Longbottom",
+        "rut": "77777777-7",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Fred Weasley",
+        "rut": "88888888-8",
+        "direccion": "La Madriguera"
+      },
+      {
+        "nombre": "George Weasley",
+        "rut": "99999999-9",
+        "direccion": "La Madriguera"
+      },
+      {
+        "nombre": "Molly Weasley",
+        "rut": "10101010-1",
+        "direccion": "La Madriguera"
+      },
+      {
+        "nombre": "Arthur Weasley",
+        "rut": "11111110-1",
+        "direccion": "La Madriguera"
+      },
+      {
+        "nombre": "Minerva McGonagall",
+        "rut": "12121212-1",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Sirius Black",
+        "rut": "13131313-1",
+        "direccion": "Grimmauld Place"
+      },
+      {
+        "nombre": "Remus Lupin",
+        "rut": "14141414-1",
+        "direccion": "Desconocida"
+      },
+      {
+        "nombre": "Dolores Umbridge",
+        "rut": "15151515-1",
+        "direccion": "Ministerio"
+      },
+      {
+        "nombre": "Cornelius Fudge",
+        "rut": "16161616-1",
+        "direccion": "Ministerio"
+      },
+      {
+        "nombre": "Peter Pettigrew",
+        "rut": "17171717-1",
+        "direccion": "Desconocida"
+      },
+      {
+        "nombre": "Cedric Diggory",
+        "rut": "18181818-1",
+        "direccion": "Hogsmeade"
+      },
+      {
+        "nombre": "Cho Chang",
+        "rut": "19191919-1",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Viktor Krum",
+        "rut": "20202020-2",
+        "direccion": "Bulgaria"
+      },
+      {
+        "nombre": "Fleur Delacour",
+        "rut": "21212121-2",
+        "direccion": "Francia"
+      },
+      {
+        "nombre": "Nymphadora Tonks",
+        "rut": "23232323-2",
+        "direccion": "Londres"
+      },
+      {
+        "nombre": "Bellatrix Lestrange",
+        "rut": "24242424-2",
+        "direccion": "Azkaban"
+      },
+      {
+        "nombre": "Lucius Malfoy",
+        "rut": "25252525-2",
+        "direccion": "Mansión Malfoy"
+      },
+      {
+        "nombre": "Narcissa Malfoy",
+        "rut": "26262626-2",
+        "direccion": "Mansión Malfoy"
+      },
+      {
+        "nombre": "Gilderoy Lockhart",
+        "rut": "27272727-2",
+        "direccion": "San Mungo"
+      },
+      {
+        "nombre": "Dobby",
+        "rut": "28282828-2",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Kreacher",
+        "rut": "29292929-2",
+        "direccion": "Grimmauld Place"
+      },
+      {
+        "nombre": "Kingsley Shacklebolt",
+        "rut": "30303030-3",
+        "direccion": "Ministerio"
+      },
+      {
+        "nombre": "Alastor Moody",
+        "rut": "31313131-3",
+        "direccion": "Desconocida"
+      },
+      {
+        "nombre": "Rita Skeeter",
+        "rut": "32323232-3",
+        "direccion": "Londres"
+      },
+      {
+        "nombre": "Horace Slughorn",
+        "rut": "33333334-3",
+        "direccion": "Hogsmeade"
+      },
+      {
+        "nombre": "Bathilda Bagshot",
+        "rut": "34343434-3",
+        "direccion": "Godric's Hollow"
+      },
+      {
+        "nombre": "Colin Creevey",
+        "rut": "35353535-3",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Pansy Parkinson",
+        "rut": "36363636-3",
+        "direccion": "Desconocida"
+      },
+      {
+        "nombre": "Lavender Brown",
+        "rut": "37373737-3",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Dean Thomas",
+        "rut": "38383838-3",
+        "direccion": "Londres"
+      },
+      {
+        "nombre": "Seamus Finnigan",
+        "rut": "39393939-3",
+        "direccion": "Irlanda"
+      },
+      {
+        "nombre": "Percy Weasley",
+        "rut": "40404040-4",
+        "direccion": "Ministerio"
+      },
+      {
+        "nombre": "Barty Crouch Jr.",
+        "rut": "41414141-4",
+        "direccion": "Azkaban"
+      },
+      {
+        "nombre": "Barty Crouch Sr.",
+        "rut": "42424242-4",
+        "direccion": "Ministerio"
+      },
+      {
+        "nombre": "Hedwig",
+        "rut": "43434343-4",
+        "direccion": "Con Harry"
+      },
+      {
+        "nombre": "Nearly Headless Nick",
+        "rut": "44444445-4",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Bloody Baron",
+        "rut": "45454545-4",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Moaning Myrtle",
+        "rut": "46464646-4",
+        "direccion": "Baño"
+      },
+      {
+        "nombre": "Argus Filch",
+        "rut": "47474747-4",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Madam Hooch",
+        "rut": "48484848-4",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Oliver Wood",
+        "rut": "49494949-4",
+        "direccion": "Hogwarts"
+      },
+      {
+        "nombre": "Angelina Johnson",
+        "rut": "50505050-5",
+        "direccion": "Hogwarts"
+      }
+    ]
+  },
+  "Ministerio": {
+    "Empleados": [
+      {
+        "nombre": "Harry Potter",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Hermione Granger",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Ron Weasley",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Albus Dumbledore",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Severus Snape",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Rubeus Hagrid",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Draco Malfoy",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Luna Lovegood",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Ginny Weasley",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Neville Longbottom",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Fred Weasley",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "George Weasley",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Molly Weasley",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Arthur Weasley",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Minerva McGonagall",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Sirius Black",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Remus Lupin",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Dolores Umbridge",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Cornelius Fudge",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Peter Pettigrew",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Cedric Diggory",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Cho Chang",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Viktor Krum",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Fleur Delacour",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Nymphadora Tonks",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Bellatrix Lestrange",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Lucius Malfoy",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Narcissa Malfoy",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Gilderoy Lockhart",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Dobby",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Kreacher",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Kingsley Shacklebolt",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Alastor Moody",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Rita Skeeter",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Horace Slughorn",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Bathilda Bagshot",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Colin Creevey",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Pansy Parkinson",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Lavender Brown",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Dean Thomas",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Seamus Finnigan",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Percy Weasley",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Barty Crouch Jr.",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Barty Crouch Sr.",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Hedwig",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Nearly Headless Nick",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Bloody Baron",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Moaning Myrtle",
+        "departamento": "Departamento 4",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Argus Filch",
+        "departamento": "Departamento 5",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Madam Hooch",
+        "departamento": "Departamento 1",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Oliver Wood",
+        "departamento": "Departamento 2",
+        "puesto": "Funcionario"
+      },
+      {
+        "nombre": "Angelina Johnson",
+        "departamento": "Departamento 3",
+        "puesto": "Funcionario"
+      }
+    ]
+  },
+  "Auditoria": {
+    "Bitacoras": [
+      {
+        "id": 1,
+        "evento": "Registro 1 alterado",
+        "usuario": "Harry Potter",
+        "fecha": "2023-06-01"
+      },
+      {
+        "id": 2,
+        "evento": "Registro 2 alterado",
+        "usuario": "Hermione Granger",
+        "fecha": "2023-06-02"
+      },
+      {
+        "id": 3,
+        "evento": "Registro 3 alterado",
+        "usuario": "Ron Weasley",
+        "fecha": "2023-06-03"
+      },
+      {
+        "id": 4,
+        "evento": "Registro 4 alterado",
+        "usuario": "Albus Dumbledore",
+        "fecha": "2023-06-04"
+      },
+      {
+        "id": 5,
+        "evento": "Registro 5 alterado",
+        "usuario": "Severus Snape",
+        "fecha": "2023-06-05"
+      },
+      {
+        "id": 6,
+        "evento": "Registro 6 alterado",
+        "usuario": "Rubeus Hagrid",
+        "fecha": "2023-06-06"
+      },
+      {
+        "id": 7,
+        "evento": "Registro 7 alterado",
+        "usuario": "Draco Malfoy",
+        "fecha": "2023-06-07"
+      },
+      {
+        "id": 8,
+        "evento": "Registro 8 alterado",
+        "usuario": "Luna Lovegood",
+        "fecha": "2023-06-08"
+      },
+      {
+        "id": 9,
+        "evento": "Registro 9 alterado",
+        "usuario": "Ginny Weasley",
+        "fecha": "2023-06-09"
+      },
+      {
+        "id": 10,
+        "evento": "Registro 10 alterado",
+        "usuario": "Neville Longbottom",
+        "fecha": "2023-06-10"
+      },
+      {
+        "id": 11,
+        "evento": "Registro 11 alterado",
+        "usuario": "Fred Weasley",
+        "fecha": "2023-06-11"
+      },
+      {
+        "id": 12,
+        "evento": "Registro 12 alterado",
+        "usuario": "George Weasley",
+        "fecha": "2023-06-12"
+      },
+      {
+        "id": 13,
+        "evento": "Registro 13 alterado",
+        "usuario": "Molly Weasley",
+        "fecha": "2023-06-13"
+      },
+      {
+        "id": 14,
+        "evento": "Registro 14 alterado",
+        "usuario": "Arthur Weasley",
+        "fecha": "2023-06-14"
+      },
+      {
+        "id": 15,
+        "evento": "Registro 15 alterado",
+        "usuario": "Minerva McGonagall",
+        "fecha": "2023-06-15"
+      },
+      {
+        "id": 16,
+        "evento": "Registro 16 alterado",
+        "usuario": "Sirius Black",
+        "fecha": "2023-06-16"
+      },
+      {
+        "id": 17,
+        "evento": "Registro 17 alterado",
+        "usuario": "Remus Lupin",
+        "fecha": "2023-06-17"
+      },
+      {
+        "id": 18,
+        "evento": "Registro 18 alterado",
+        "usuario": "Dolores Umbridge",
+        "fecha": "2023-06-18"
+      },
+      {
+        "id": 19,
+        "evento": "Registro 19 alterado",
+        "usuario": "Cornelius Fudge",
+        "fecha": "2023-06-19"
+      },
+      {
+        "id": 20,
+        "evento": "Registro 20 alterado",
+        "usuario": "Peter Pettigrew",
+        "fecha": "2023-06-20"
+      },
+      {
+        "id": 21,
+        "evento": "Registro 21 alterado",
+        "usuario": "Cedric Diggory",
+        "fecha": "2023-06-21"
+      },
+      {
+        "id": 22,
+        "evento": "Registro 22 alterado",
+        "usuario": "Cho Chang",
+        "fecha": "2023-06-22"
+      },
+      {
+        "id": 23,
+        "evento": "Registro 23 alterado",
+        "usuario": "Viktor Krum",
+        "fecha": "2023-06-23"
+      },
+      {
+        "id": 24,
+        "evento": "Registro 24 alterado",
+        "usuario": "Fleur Delacour",
+        "fecha": "2023-06-24"
+      },
+      {
+        "id": 25,
+        "evento": "Registro 25 alterado",
+        "usuario": "Nymphadora Tonks",
+        "fecha": "2023-06-25"
+      },
+      {
+        "id": 26,
+        "evento": "Registro 26 alterado",
+        "usuario": "Bellatrix Lestrange",
+        "fecha": "2023-06-26"
+      },
+      {
+        "id": 27,
+        "evento": "Registro 27 alterado",
+        "usuario": "Lucius Malfoy",
+        "fecha": "2023-06-27"
+      },
+      {
+        "id": 28,
+        "evento": "Registro 28 alterado",
+        "usuario": "Narcissa Malfoy",
+        "fecha": "2023-06-28"
+      },
+      {
+        "id": 29,
+        "evento": "Registro 29 alterado",
+        "usuario": "Gilderoy Lockhart",
+        "fecha": "2023-06-29"
+      },
+      {
+        "id": 30,
+        "evento": "Registro 30 alterado",
+        "usuario": "Dobby",
+        "fecha": "2023-06-30"
+      },
+      {
+        "id": 31,
+        "evento": "Registro 31 alterado",
+        "usuario": "Kreacher",
+        "fecha": "2023-06-01"
+      },
+      {
+        "id": 32,
+        "evento": "Registro 32 alterado",
+        "usuario": "Kingsley Shacklebolt",
+        "fecha": "2023-06-02"
+      },
+      {
+        "id": 33,
+        "evento": "Registro 33 alterado",
+        "usuario": "Alastor Moody",
+        "fecha": "2023-06-03"
+      },
+      {
+        "id": 34,
+        "evento": "Registro 34 alterado",
+        "usuario": "Rita Skeeter",
+        "fecha": "2023-06-04"
+      },
+      {
+        "id": 35,
+        "evento": "Registro 35 alterado",
+        "usuario": "Horace Slughorn",
+        "fecha": "2023-06-05"
+      },
+      {
+        "id": 36,
+        "evento": "Registro 36 alterado",
+        "usuario": "Bathilda Bagshot",
+        "fecha": "2023-06-06"
+      },
+      {
+        "id": 37,
+        "evento": "Registro 37 alterado",
+        "usuario": "Colin Creevey",
+        "fecha": "2023-06-07"
+      },
+      {
+        "id": 38,
+        "evento": "Registro 38 alterado",
+        "usuario": "Pansy Parkinson",
+        "fecha": "2023-06-08"
+      },
+      {
+        "id": 39,
+        "evento": "Registro 39 alterado",
+        "usuario": "Lavender Brown",
+        "fecha": "2023-06-09"
+      },
+      {
+        "id": 40,
+        "evento": "Registro 40 alterado",
+        "usuario": "Dean Thomas",
+        "fecha": "2023-06-10"
+      },
+      {
+        "id": 41,
+        "evento": "Registro 41 alterado",
+        "usuario": "Seamus Finnigan",
+        "fecha": "2023-06-11"
+      },
+      {
+        "id": 42,
+        "evento": "Registro 42 alterado",
+        "usuario": "Percy Weasley",
+        "fecha": "2023-06-12"
+      },
+      {
+        "id": 43,
+        "evento": "Registro 43 alterado",
+        "usuario": "Barty Crouch Jr.",
+        "fecha": "2023-06-13"
+      },
+      {
+        "id": 44,
+        "evento": "Registro 44 alterado",
+        "usuario": "Barty Crouch Sr.",
+        "fecha": "2023-06-14"
+      },
+      {
+        "id": 45,
+        "evento": "Registro 45 alterado",
+        "usuario": "Hedwig",
+        "fecha": "2023-06-15"
+      },
+      {
+        "id": 46,
+        "evento": "Registro 46 alterado",
+        "usuario": "Nearly Headless Nick",
+        "fecha": "2023-06-16"
+      },
+      {
+        "id": 47,
+        "evento": "Registro 47 alterado",
+        "usuario": "Bloody Baron",
+        "fecha": "2023-06-17"
+      },
+      {
+        "id": 48,
+        "evento": "Registro 48 alterado",
+        "usuario": "Moaning Myrtle",
+        "fecha": "2023-06-18"
+      },
+      {
+        "id": 49,
+        "evento": "Registro 49 alterado",
+        "usuario": "Argus Filch",
+        "fecha": "2023-06-19"
+      },
+      {
+        "id": 50,
+        "evento": "Registro 50 alterado",
+        "usuario": "Madam Hooch",
+        "fecha": "2023-06-20"
+      }
+    ]
+  }
 }
