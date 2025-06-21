@@ -5,7 +5,7 @@ function loadMails(){
         list.innerHTML='';
         mails.forEach((m,i)=>{
             const item=document.createElement('div');
-            item.className='list-group-item list-group-item-action mail-item';
+            item.className='mui-list-item mail-item';
             item.innerHTML=`<strong>${m.subject}</strong><br><small>${m.from} - ${m.date}</small>`;
             item.addEventListener('click',()=>{
                 document.querySelectorAll('#mailList .mail-item').forEach(el=>el.classList.remove('selected'));

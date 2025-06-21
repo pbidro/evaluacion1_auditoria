@@ -246,3 +246,52 @@ body {
 #startMenu li:hover {
     background: #555;
 }
+
+/* Magic UI custom classes */
+.mui-window {
+    /* inherits styles from .window */
+}
+
+.mui-btn {
+    background: #6200ea;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+.mui-btn:hover {
+    background: #4500b5;
+}
+
+.mui-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.mui-table th,
+.mui-table td {
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+.mui-table tbody tr:nth-child(odd) {
+    background: #f5f5f5;
+}
+
+.mui-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.mui-list-item {
+    padding: 6px;
+    cursor: pointer;
+}
+.mui-list-item:hover,
+.mui-list-item.selected {
+    background: #e5f1fb;
+}
+
+.mui-mt-2 {
+    margin-top: 0.5rem;
+}

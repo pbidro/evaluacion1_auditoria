@@ -4,37 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ministerio OS</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magic-ui/dist/magic-ui.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="desktop"></div>
 
-    <div id="dbWindow" class="window">
+    <div id="dbWindow" class="window mui-window">
         <div class="title-bar"><span>Base de Datos</span>
             <div class="window-buttons">
-                <button class="minimize">_</button>
-                <button class="maximize"></button>
-                <button class="close">X</button>
+                <button class="minimize mui-btn">_</button>
+                <button class="maximize mui-btn"></button>
+                <button class="close mui-btn">X</button>
             </div>
         </div>
         <div class="window-content db">
             <div id="dbNav" class="db-nav"></div>
             <div class="db-table-container">
-                <table id="dbTable" class="table table-striped"></table>
+                <table id="dbTable" class="mui-table"></table>
             </div>
             <p class="notice">Este es un entorno de pruebas. Algunos datos pueden no ser reales.</p>
         </div>
     </div>
 
-    <div id="infraWindow" class="window">
+    <div id="infraWindow" class="window mui-window">
         <div class="title-bar"><span>Mapa de Infraestructura</span>
             <div class="window-buttons">
-                <button class="minimize">_</button>
-                <button class="maximize"></button>
-                <button class="close">X</button>
+                <button class="minimize mui-btn">_</button>
+                <button class="maximize mui-btn"></button>
+                <button class="close mui-btn">X</button>
             </div>
         </div>
         <div class="window-content">
@@ -43,92 +42,92 @@
         </div>
     </div>
 
-    <div id="procWindow" class="window">
+    <div id="procWindow" class="window mui-window">
         <div class="title-bar"><span>Administrador de Procesos</span>
             <div class="window-buttons">
-                <button class="minimize">_</button>
-                <button class="maximize"></button>
-                <button class="close">X</button>
+                <button class="minimize mui-btn">_</button>
+                <button class="maximize mui-btn"></button>
+                <button class="close mui-btn">X</button>
             </div>
         </div>
         <div class="window-content">
-            <table id="procTable"></table>
+            <table id="procTable" class="mui-table"></table>
         </div>
     </div>
 
-    <div id="textWindow" class="window">
+    <div id="textWindow" class="window mui-window">
         <div class="title-bar"><span>Motor de Texto</span>
             <div class="window-buttons">
-                <button class="minimize">_</button>
-                <button class="maximize"></button>
-                <button class="close">X</button>
+                <button class="minimize mui-btn">_</button>
+                <button class="maximize mui-btn"></button>
+                <button class="close mui-btn">X</button>
             </div>
         </div>
         <div class="window-content">
             <div class="toolbar">
-                <button id="newDoc">Nuevo</button>
-                <button id="openDoc">Abrir</button>
-                <button id="saveDoc">Guardar</button>
-                <button>Copiar</button>
-                <button>Pegar</button>
-                <button>Negrita</button>
-                <button>Cursiva</button>
-                <button>Subrayado</button>
+                <button id="newDoc" class="mui-btn">Nuevo</button>
+                <button id="openDoc" class="mui-btn">Abrir</button>
+                <button id="saveDoc" class="mui-btn">Guardar</button>
+                <button class="mui-btn">Copiar</button>
+                <button class="mui-btn">Pegar</button>
+                <button class="mui-btn">Negrita</button>
+                <button class="mui-btn">Cursiva</button>
+                <button class="mui-btn">Subrayado</button>
             </div>
             <textarea id="editor" rows="10"></textarea>
             <div id="licenseMsg" class="license-msg">Licencia vencida</div>
         </div>
     </div>
 
-    <div id="contaWindow" class="window">
+    <div id="contaWindow" class="window mui-window">
         <div class="title-bar"><span>Contabilidad</span>
             <div class="window-buttons">
-                <button class="minimize">_</button>
-                <button class="maximize"></button>
-                <button class="close">X</button>
+                <button class="minimize mui-btn">_</button>
+                <button class="maximize mui-btn"></button>
+                <button class="close mui-btn">X</button>
             </div>
         </div>
         <div class="window-content">
             <canvas id="chart1" width="200" height="150"></canvas>
             <canvas id="chart2" width="200" height="150"></canvas>
-            <div id="totalConta" class="mt-2"></div>
+            <div id="totalConta" class="mui-mt-2"></div>
         </div>
     </div>
 
-    <div id="mailWindow" class="window">
+    <div id="mailWindow" class="window mui-window">
         <div class="title-bar"><span>Hedwig Mail</span>
             <div class="window-buttons">
-                <button class="minimize">_</button>
-                <button class="maximize"></button>
-                <button class="close">X</button>
+                <button class="minimize mui-btn">_</button>
+                <button class="maximize mui-btn"></button>
+                <button class="close mui-btn">X</button>
             </div>
         </div>
         <div class="window-content mail">
-            <div id="mailList" class="list-group"></div>
+            <div id="mailList" class="mui-list"></div>
             <div id="mailView" class="mail-view"></div>
             <p class="notice">Este es un sistema de prueba, algunos datos pueden no ser reales.</p>
         </div>
     </div>
 
-    <div id="monWindow" class="window">
+    <div id="monWindow" class="window mui-window">
         <div class="title-bar"><span>Monitoreo</span>
             <div class="window-buttons">
-                <button class="minimize">_</button>
-                <button class="maximize"></button>
-                <button class="close">X</button>
+                <button class="minimize mui-btn">_</button>
+                <button class="maximize mui-btn"></button>
+                <button class="close mui-btn">X</button>
             </div>
         </div>
         <div class="window-content">
-            <table id="monTable"></table>
+            <table id="monTable" class="mui-table"></table>
         </div>
     </div>
 
-    <div id="orgWindow" class="window">
+    <div id="orgWindow" class="window mui-window">
         <div class="title-bar"><span>Organigrama</span>
             <div class="window-buttons">
-                <button class="minimize">_</button>
-                <button class="maximize"></button>
-                <button class="close">X</button>
+                <button class="minimize mui-btn">_</button>
+                <button class="maximize mui-btn"></button>
+                <button class="close mui-btn">X</button>
             </div>
         </div>
         <div class="window-content">
@@ -137,7 +136,7 @@
     </div>
 
     <div id="taskbar">
-        <button id="startBtn">Inicio</button>
+        <button id="startBtn" class="mui-btn">Inicio</button>
         <div id="taskItems"></div>
         <span id="clock"></span>
     </div>
@@ -146,9 +145,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/magic-ui/dist/magic-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
