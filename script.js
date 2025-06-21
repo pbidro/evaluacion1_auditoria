@@ -42,7 +42,7 @@ function createTaskItem(id){
 function openWindow(id){
     const win = document.getElementById(id);
     if(!win) return;
-    win.style.display = 'block';
+    win.style.display = 'flex';
     if(!win.dataset.opened){
         win.dataset.opened = '1';
         toggleMaximize(win);
@@ -206,8 +206,22 @@ function init(){
     if(enabledPrograms.includes('textWindow')) initEditor();
 }
 
+const defaultPrograms = [
+  { id: 'dbWindow', name: 'Base de Datos', icon: 'https://cdn-icons-png.flaticon.com/512/3075/3075977.png', enabled: true },
+  { id: 'infraWindow', name: 'Mapa de Infraestructura', icon: 'https://cdn-icons-png.flaticon.com/512/3474/3474369.png', enabled: true },
+  { id: 'procWindow', name: 'Administrador de Procesos', icon: 'https://cdn-icons-png.flaticon.com/512/865/865821.png', enabled: true },
+  { id: 'textWindow', name: 'Motor de Texto', icon: 'https://cdn-icons-png.flaticon.com/512/1027/1027219.png', enabled: true },
+  { id: 'contaWindow', name: 'Contabilidad', icon: 'https://cdn-icons-png.flaticon.com/512/1773/1773381.png', enabled: true },
+  { id: 'mailWindow', name: 'Hedwig Mail', icon: 'https://cdn-icons-png.flaticon.com/512/616/616490.png', enabled: true },
+  { id: 'monWindow', name: 'Monitoreo', icon: 'https://cdn-icons-png.flaticon.com/512/3103/3103493.png', enabled: true },
+  { id: 'orgWindow', name: 'Organigrama', icon: 'https://cdn-icons-png.flaticon.com/512/764/764460.png', enabled: true }
+];
+
 function loadPrograms(){
-    return fetch('programs.json').then(r=>r.json()).then(data=>{
+    return fetch('programs.json')
+        .then(r=>r.json())
+        .catch(()=>defaultPrograms)
+        .then(data=>{
         const desktop=document.getElementById('desktop');
         const menu=document.querySelector('#startMenu ul');
         data.forEach(p=>{
