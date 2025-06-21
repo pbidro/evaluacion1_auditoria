@@ -68,5 +68,12 @@
         "date": "2023-06-10 15:40",
         "subject": "Incumplimiento de estándares",
         "body": "La oficina de decretos mágicos no sigue las directrices de desarrollo seguro. Requiere atención inmediata para evitar incidentes."
+    },
+    {
+        "from": "maintenance@magia.gob",
+        "to": "auditor@magia.gob",
+        "date": "2023-06-11 10:25",
+        "subject": "Servidor fuera de lugar",
+        "body": "Durante la limpieza encontramos un servidor antiguo conectado en el baño del piso 3. No figura en los planos."
     }
 ]
