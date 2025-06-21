@@ -191,8 +191,10 @@ function enablePanning(el){
     });
 }
 
-// Clock removed to simplify UI
-function updateClock(){}
+function updateClock(){
+    const now = new Date();
+    document.getElementById('clock').textContent = now.toLocaleTimeString();
+}
 
 
 function init(){
@@ -202,6 +204,8 @@ function init(){
     dragWindows();
     initResize();
     dragIcons();
+    updateClock();
+    setInterval(updateClock,1000);
     if(enabledPrograms.includes('contaWindow')) drawCharts();
     if(enabledPrograms.includes('dbWindow')) loadDB();
     if(enabledPrograms.includes('procWindow')) loadProcesses();
