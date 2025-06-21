@@ -4,6 +4,30 @@ function bringToFront(win){
     win.style.zIndex = ++topZ;
 }
 
+function toggleMaximize(win){
+    if(!win) return;
+    if(win.classList.contains('maximized')){
+        win.classList.remove('maximized');
+        if(win.dataset.prevLeft){
+            win.style.left = win.dataset.prevLeft;
+            win.style.top = win.dataset.prevTop;
+            win.style.width = win.dataset.prevWidth;
+            win.style.height = win.dataset.prevHeight;
+        }
+    }else{
+        win.dataset.prevLeft = win.style.left;
+        win.dataset.prevTop = win.style.top;
+        win.dataset.prevWidth = win.style.width;
+        win.dataset.prevHeight = win.style.height;
+        win.classList.add('maximized');
+        win.style.left = '0';
+        win.style.top = '0';
+        win.style.width = '100vw';
+        win.style.height = 'calc(100vh - 32px)';
+    }
+    bringToFront(win);
+}
+
 function createTaskItem(id){
     const existing = document.querySelector(`#taskItems button[data-window="${id}"]`);
     if(existing) return;
@@ -49,6 +73,12 @@ function initControls(){
     document.querySelectorAll('.window').forEach(win=>{
         win.addEventListener('mousedown', ()=>bringToFront(win));
     });
+    document.querySelectorAll('.maximize').forEach(btn=>{
+        btn.addEventListener('click',e=>{
+            const win=e.target.closest('.window');
+            toggleMaximize(win);
+        });
+    });
 }
 
 function initStartMenu(){
@@ -88,6 +118,42 @@ function dragWindows(){
         });
         document.addEventListener('mouseup', ()=>dragging=false);
     });
+}
+
+function initResize(){
+    document.querySelectorAll('.window').forEach(win=>{
+        ['ne','nw','se','sw'].forEach(dir=>{
+            const res=document.createElement('div');
+            res.className=`resizer ${dir}`;
+            win.appendChild(res);
+            res.addEventListener('mousedown',e=>startResize(e,win,dir));
+        });
+    });
+}
+
+function startResize(e,win,dir){
+    e.preventDefault();
+    bringToFront(win);
+    const startX=e.clientX; const startY=e.clientY;
+    const startW=win.offsetWidth; const startH=win.offsetHeight;
+    const startL=win.offsetLeft; const startT=win.offsetTop;
+    function doDrag(ev){
+        let w=startW, h=startH, l=startL, t=startT;
+        if(dir.includes('e')) w=startW+(ev.clientX-startX);
+        if(dir.includes('s')) h=startH+(ev.clientY-startY);
+        if(dir.includes('w')){w=startW-(ev.clientX-startX); l=startL+(ev.clientX-startX);} 
+        if(dir.includes('n')){h=startH-(ev.clientY-startY); t=startT+(ev.clientY-startY);} 
+        win.style.width=w+'px';
+        win.style.height=h+'px';
+        win.style.left=l+'px';
+        win.style.top=t+'px';
+    }
+    function stopDrag(){
+        document.removeEventListener('mousemove',doDrag);
+        document.removeEventListener('mouseup',stopDrag);
+    }
+    document.addEventListener('mousemove',doDrag);
+    document.addEventListener('mouseup',stopDrag);
 }
 
 function dragIcons(){
@@ -209,6 +275,7 @@ function init(){
     initControls();
     initStartMenu();
     dragWindows();
+    initResize();
     dragIcons();
     updateClock();
     setInterval(updateClock,1000);

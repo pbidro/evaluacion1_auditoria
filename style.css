@@ -37,12 +37,38 @@ body {
     position: absolute;
     top: 80px;
     left: 80px;
-    width: 340px;
+    width: 50vw;
+    height: 50vh;
+    max-width: 90vw;
+    max-height: 90vh;
+    min-width: 200px;
+    min-height: 150px;
     background: #e8e8e8;
     border: 2px solid #000;
     display: none;
     box-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
+
+.window.maximized {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 32px);
+}
+
+.window .resizer {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+}
+.window .resizer.ne { top: -5px; right: -5px; cursor: ne-resize; }
+.window .resizer.nw { top: -5px; left: -5px; cursor: nw-resize; }
+.window .resizer.se { bottom: -5px; right: -5px; cursor: se-resize; }
+.window .resizer.sw { bottom: -5px; left: -5px; cursor: sw-resize; }
 
 .title-bar {
     background: #1a4aa2;
@@ -64,10 +90,17 @@ body {
     margin-left: 2px;
     cursor: pointer;
 }
+.window-buttons .maximize::after {
+    content: '\2610';
+    font-size: 14px;
+}
 
 .window-content {
     padding: 8px;
     background: #fff;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .toolbar button {
