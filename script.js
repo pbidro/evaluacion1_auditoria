@@ -108,23 +108,10 @@ function initStartMenu(){
     });
 }
 
+// Dragging windows sometimes conflicts with GoJS interactions.
+// Disable the custom drag behaviour so diagrams work reliably.
 function dragWindows(){
-    document.querySelectorAll('.window').forEach(win=>{
-        const bar = win.querySelector('.title-bar');
-        let offsetX, offsetY, dragging=false;
-        bar.addEventListener('mousedown', e=>{
-            dragging=true;
-            offsetX = e.clientX - win.offsetLeft;
-            offsetY = e.clientY - win.offsetTop;
-        });
-        document.addEventListener('mousemove', e=>{
-            if(dragging){
-                win.style.left = (e.clientX - offsetX)+'px';
-                win.style.top = (e.clientY - offsetY)+'px';
-            }
-        });
-        document.addEventListener('mouseup', ()=>dragging=false);
-    });
+    // intentionally left blank
 }
 
 function initResize(){
@@ -204,10 +191,8 @@ function enablePanning(el){
     });
 }
 
-function updateClock(){
-    const now = new Date();
-    document.getElementById('clock').textContent = now.toLocaleTimeString();
-}
+// Clock removed to simplify UI
+function updateClock(){}
 
 
 function init(){
@@ -217,8 +202,6 @@ function init(){
     dragWindows();
     initResize();
     dragIcons();
-    updateClock();
-    setInterval(updateClock,1000);
     if(enabledPrograms.includes('contaWindow')) drawCharts();
     if(enabledPrograms.includes('dbWindow')) loadDB();
     if(enabledPrograms.includes('procWindow')) loadProcesses();
